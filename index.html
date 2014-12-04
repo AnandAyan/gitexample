@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Underscore Templating</title>
+    <style>
+
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+        .clearfix { display: inline-block; }
+        /* start commented backslash hack \*/
+        * html .clearfix { height: 1%; }
+        .clearfix { display: block; }
+
+        #targetContainer{
+            width: 1200px;
+            margin: 10px auto;
+            background: darkseagreen;
+            height:350px;
+            overflow-y: scroll;
+        }
+        ul.profile{
+            float:left;
+            width: 250px;
+            border: 1px solid #2d2d2d;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px grey;
+            margin: 10px;
+            background: gold;
+            padding: 10px 15px;
+        }
+        ul.profile li{
+            list-style: none;
+            border-bottom: 1px dashed #c2c2c2;
+            padding: 10px 2px;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+     <h1>Underscore_js Template</h1>
+    <div id="random">
+        some random text
+    </div>
+    <div id="targetContainer" class="clearfix">
+
+    </div>
+    <div id="targetContainer2" class="clearfix">
+
+    </div>
+
+    <script type="text/template" id="templateContainer">
+         <% _.each(dataObj,function(dataObj){ %>
+
+                 <ul class="profile" class="clearfix">
+                    <li><b>Name :</b> <%= dataObj.name %></li>
+                    <li><b>E-mail:</b> <%= dataObj.email %></li>
+                    <li><b>Phone Number :</b> <%= dataObj.phno %></li>
+                    <li><b>City :</b> <%= dataObj.city %></li>
+                 </ul>
+        <% }) %>
+    </script>
+    <script type="text/template" id="templateContainer2">
+        <% _.each(dataObj,function(dataObj){ %>
+
+        <ul class="profile" class="clearfix">
+            <li><b>Name :</b> <%= dataObj.name %></li>
+            <li><b>E-mail:</b> <%= dataObj.email %></li>
+            <li><b>Phone Number :</b> <%= dataObj.phno %></li>
+            <li><b>City :</b> <%= dataObj.city %></li>
+        </ul>
+        <% }) %>
+    </script>
+</div>
+<script src="jquery-2.0.js"></script>
+<script src="underscore.js"></script>
+<script src="jquery.infinitescroll.js"></script>
+<script src="jquery.endless-scroll.js"></script>
+<script src="data.js"></script>
+
+</body>
+</html>
